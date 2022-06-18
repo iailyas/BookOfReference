@@ -1,6 +1,6 @@
 ﻿namespace BookOfReference.Models
 {
-    public interface Departament
+    public class Departament
     {
         public int Id { get; set; }
         public int Company_Id { get; set; }
@@ -12,5 +12,8 @@
         public string Phone { get; set; }
         public int Workers_Count { get; set; }
         public Company Company { get; set; }
+        public IList<Worker> Workers { get; set; }
+        
+
     }
 }
