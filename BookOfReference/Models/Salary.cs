@@ -1,10 +1,14 @@
-﻿namespace BookOfReference.Models
+﻿using System.Text.Json.Serialization;
+
+namespace BookOfReference.Models
 {
-    public class Salary
+    public partial class Salary
     {
         public int Id { get; set; }
         public float MonthSalary { get; set; }
-        public float Award_Salary { get; set; }
-        public Position Position { get; set; }
+        public float AwardSalary { get; set; }
+        [JsonIgnore]
+        public virtual Position Position { get; set; }
+        public int PositionId { get; set; }
     }
 }
