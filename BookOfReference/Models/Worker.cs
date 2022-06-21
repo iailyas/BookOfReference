@@ -10,7 +10,8 @@ namespace BookOfReference.Models
         public string Phone { get; set; }
         public virtual List<Position> Positions { get; set; }
         [JsonIgnore]
-        public int DepartamentId { get; set; }
         public virtual Departament Departament { get; set; }
+        public int DepartamentId { get; set; }
+        
     }
 }
