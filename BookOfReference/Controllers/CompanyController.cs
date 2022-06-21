@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using BookOfReference;
 using BookOfReference.Models;
 using BookOfReference.Interfaces;
+using BookOfReference.DTO;
 
 namespace BookOfReference.Controllers
 {
@@ -15,61 +16,45 @@ namespace BookOfReference.Controllers
     [ApiController]
     public class CompanyController : Controller
     {
-        private readonly ICompanyRepository repository;
-        private readonly ApplicationDBContext context;
-       
+        private readonly ICompanyService companyService;
 
-        public CompanyController(ICompanyRepository repository, ApplicationDBContext context)
+        public CompanyController(ICompanyService companyService)
         {
-            this.repository = repository;
-            this.context = context;
+            this.companyService = companyService;
         }
 
-
-
-        // GET: api/Company
         [HttpGet]
-        public async Task<IEnumerable<Company>> GetCompany()
+        public async Task<IEnumerable<Company>> GetCompanyes()
         {
-         
-            return await repository.GetAllCompaniesAsync();
+            return await companyService.GetAllCompaniesAsync();
         }
 
-        // GET: api/Company/5
         [HttpGet("{id}")]
-        public async Task<ActionResult> GetCompany(int id)
+        public async Task<IEnumerable<Company>> GetCompany(int id)
         {
 
-            return BadRequest();
+            return await companyService.GetCompanyByIdAsync(id);
         }
 
-        // PUT: api/Company/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
-        public async Task<IActionResult> PutCompany(int id, Company company)
+        public async Task<int> PutCompany(int id, CreateCompanyDTO companyDTO)
         {
-           
-            return NoContent();
+            return await companyService.UpdateAsync(id,companyDTO);
         }
 
-        // POST: api/Company
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task PostCompany(Company company)
-        {
-          
-            await repository.CreateAsync(company);
+        public async Task PostCompany(CreateCompanyDTO companyDTO)
+        {  
             
-
-            
+            await companyService.CreateAsync(companyDTO);            
         }
 
-        // DELETE: api/Company/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteCompany(int id)
+        public async Task DeleteCompany(int id)
         {
-           
-            return NoContent();
+           companyService.DeleteAsync(id);
+
+            
         }
 
         private bool CompanyExists(int id)

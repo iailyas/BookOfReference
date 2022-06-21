@@ -14,12 +14,12 @@ namespace BookOfReference
         {
         }
 
-        public virtual DbSet<Company> Companies { get; set; } = null!;
-        public virtual DbSet<Departament> Departaments { get; set; } = null!;
-        //public virtual DbSet<Position> Positions { get; set; } = null!;
-        //public virtual DbSet<Salary> Salaries { get; set; } = null!;
-        //public virtual DbSet<Worker> Workers { get; set; } = null!;
+        public virtual DbSet<Company> Companies { get; set; }
+        public virtual DbSet<Departament> Departaments { get; set; }
+        public virtual DbSet<Position> Positions { get; set; }
+        public virtual DbSet<Salary> Salaries { get; set; }
+        public virtual DbSet<Worker> Workers { get; set; }
 
-        
+
     }
 }

@@ -1,6 +1,8 @@
-﻿namespace BookOfReference.Models
+﻿using BookOfReference.Models;
+
+namespace BookOfReference.DTO
 {
-    public partial class Company
+    public class CreateCompanyDTO
     {
         public int Id { get; set; }
         public string Name { get; set; } = null!;
@@ -8,6 +10,6 @@
         public string Region { get; set; } = null!;
         public string City { get; set; } = null!;
         public string Adress { get; set; } = null!;
-        public virtual List<Departament>? Departaments { get; set; }
+        
     }
 }

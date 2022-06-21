@@ -1,6 +1,8 @@
+global using BookOfReference.Service.Interfaces;
 using BookOfReference;
 using BookOfReference.Interfaces;
 using BookOfReference.Repositories;
+using BookOfReference.Service;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -15,7 +17,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 builder.Services.AddControllers();
+
 builder.Services.AddTransient<ICompanyRepository, CompanyRepository>();
+
+builder.Services.AddTransient<ICompanyService, CompanyService>();
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
