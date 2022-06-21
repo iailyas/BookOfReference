@@ -1,8 +1,6 @@
 ﻿using BookOfReference.DTO;
 using BookOfReference.Interfaces;
 using BookOfReference.Models;
-using Microsoft.Data.SqlClient;
-using Microsoft.EntityFrameworkCore;
 
 namespace BookOfReference.Service
 {

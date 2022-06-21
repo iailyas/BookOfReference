@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using BookOfReference;
+﻿using BookOfReference.DTO;
 using BookOfReference.Models;
-using BookOfReference.Interfaces;
-using BookOfReference.DTO;
+using Microsoft.AspNetCore.Mvc;
 
 namespace BookOfReference.Controllers
 {
@@ -23,8 +15,9 @@ namespace BookOfReference.Controllers
             this.companyService = companyService;
         }
 
+
         [HttpGet]
-        public async Task<IEnumerable<Company>> GetCompanyes()
+        public async Task<IEnumerable<Company>> GetCompanies()
         {
             return await companyService.GetAllCompaniesAsync();
         }
@@ -36,31 +29,24 @@ namespace BookOfReference.Controllers
             return await companyService.GetCompanyByIdAsync(id);
         }
 
+        [HttpPost]
+        public async Task PostCompany(CreateCompanyDTO companyDTO)
+        {
+
+            await companyService.CreateAsync(companyDTO);
+        }
+
         [HttpPut("{id}")]
         public async Task<int> PutCompany(int id, CreateCompanyDTO companyDTO)
         {
-            return await companyService.UpdateAsync(id,companyDTO);
-        }
-
-        [HttpPost]
-        public async Task PostCompany(CreateCompanyDTO companyDTO)
-        {  
-            
-            await companyService.CreateAsync(companyDTO);            
+            return await companyService.UpdateAsync(id, companyDTO);
         }
 
         [HttpDelete("{id}")]
         public async Task DeleteCompany(int id)
         {
-           companyService.DeleteAsync(id);
+            await companyService.DeleteAsync(id);
 
-            
-        }
-
-        private bool CompanyExists(int id)
-        {
-            return true;
-           // return (_context.Company?.Any(e => e.Id == id)).GetValueOrDefault();
         }
     }
 }

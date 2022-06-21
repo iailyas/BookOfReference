@@ -15,18 +15,20 @@ namespace BookOfReference.Repositories
         {
             this.context = context;
         }
-
-        public async Task<IEnumerable<Company>> DeleteAsync(int companyId)
+        public async Task<int> CreateAsync(CreateCompanyDTO companyDTO)
         {
 
-            var id = new SqlParameter("@id", companyId);
-            
-            return await context.Companies
-            .FromSqlRaw("DELETE FROM Companies WHERE Id = @id", id).ToListAsync();
+            var commandText = "INSERT INTO COMPANIES (Name,Phone,Region,City,Adress)" +
+                " VALUES (@Name,@Phone,@Region,@City,@Adress)";
+            var Name = new SqlParameter("@Name", companyDTO.Name);
+            var Phone = new SqlParameter("@Phone", companyDTO.Phone);
+            var Region = new SqlParameter("@Region", companyDTO.Region);
+            var City = new SqlParameter("@City", companyDTO.City);
+            var Adress = new SqlParameter("@Adress", companyDTO.Adress);
             context.SaveChanges();
-            
-        }
+            return await context.Database.ExecuteSqlRawAsync(commandText, Name, Phone, Region, City, Adress);
 
+        }
         public async Task<IEnumerable<Company>> GetAllCompaniesAsync()
         {
             return await context.Companies
@@ -44,21 +46,6 @@ namespace BookOfReference.Repositories
         {
             throw new NotImplementedException();
         }
-        public async Task<int> CreateAsync(CreateCompanyDTO companyDTO)
-        {
-
-            var commandText = "INSERT INTO COMPANIES (Name,Phone,Region,City,Adress)" +
-                " VALUES (@Name,@Phone,@Region,@City,@Adress)";
-            var Name = new SqlParameter("@Name", companyDTO.Name);
-            var Phone = new SqlParameter("@Phone", companyDTO.Phone);
-            var Region = new SqlParameter("@Region", companyDTO.Region);
-            var City = new SqlParameter("@City", companyDTO.City);
-            var Adress = new SqlParameter("@Adress", companyDTO.Adress);
-            context.SaveChanges();
-            return await context.Database.ExecuteSqlRawAsync(commandText, Name, Phone, Region, City, Adress);
-
-        }
-
         public Task<int> UpdateAsync(int id, CreateCompanyDTO companyDTO)
         {
             var commandText = "UPDATE Companies SET Name = @Name, Phone = @Phone, Region = @Region, City = @City, Adress = @Adress WHERE Id = @id";
@@ -70,6 +57,16 @@ namespace BookOfReference.Repositories
             var Currentid = new SqlParameter("@id", id);
             context.SaveChanges();
             return context.Database.ExecuteSqlRawAsync(commandText, Name, Phone, Region, City, Adress, Currentid);
+        }
+        public async Task<IEnumerable<Company>> DeleteAsync(int companyId)
+        {
+
+            var id = new SqlParameter("@id", companyId);
+
+            return await context.Companies
+            .FromSqlRaw("DELETE FROM Companies WHERE Id = @id", id).ToListAsync();
+            context.SaveChanges();
+
         }
     }
 }
