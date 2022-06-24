@@ -1,6 +1,4 @@
-﻿using BookOfReference.Models;
-
-namespace BookOfReference.DTO
+﻿namespace BookOfReference.DTO
 {
     public class CreateCompanyDTO
     {
@@ -10,6 +8,6 @@ namespace BookOfReference.DTO
         public string Region { get; set; } = null!;
         public string City { get; set; } = null!;
         public string Adress { get; set; } = null!;
-        
+
     }
 }

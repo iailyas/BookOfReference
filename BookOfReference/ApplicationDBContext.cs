@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using BookOfReference.Models;
+﻿using BookOfReference.Models;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace BookOfReference
 {
     public partial class ApplicationDBContext : DbContext
     {
-        
+
         public ApplicationDBContext(DbContextOptions<ApplicationDBContext> options)
             : base(options)
         {

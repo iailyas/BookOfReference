@@ -1,6 +1,5 @@
 ﻿using BookOfReference.DTO;
 using BookOfReference.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookOfReference.Controllers
@@ -17,33 +16,33 @@ namespace BookOfReference.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Departament>> GetCompanies()
+        public async Task<IEnumerable<Departament>> GetDepartaments()
         {
             return await departamentService.GetAllDepartamentsAsync();
         }
 
         [HttpGet("{id}")]
-        public async Task<IEnumerable<Departament>> GetCompany(int id)
+        public async Task<IEnumerable<Departament>> GetDepartament(int id)
         {
 
             return await departamentService.GetDepartamentsByIdAsync(id);
         }
 
         [HttpPost]
-        public async Task PostCompany(CreateDepartamentDTO departamentDTO)
+        public async Task PostDepartament(CreateDepartamentDTO departamentDTO)
         {
 
             await departamentService.CreateAsync(departamentDTO);
         }
 
         [HttpPut("{id}")]
-        public async Task<int> PutCompany(int id, CreateDepartamentDTO departamentDTO)
+        public async Task<int> PutDepartament(int id, CreateDepartamentDTO departamentDTO)
         {
             return await departamentService.UpdateAsync(id, departamentDTO);
         }
 
         [HttpDelete("{id}")]
-        public async Task DeleteCompany(int id)
+        public async Task DeleteDepartament(int id)
         {
             await departamentService.DeleteAsync(id);
 

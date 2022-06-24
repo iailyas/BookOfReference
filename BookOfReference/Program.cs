@@ -14,9 +14,17 @@ builder.Services.AddControllers();
 
 builder.Services.AddTransient<ICompanyRepository, CompanyRepository>();
 builder.Services.AddTransient<IDepartamentRepository,DepartamentRepository>();
+builder.Services.AddTransient<IPositionRepository, PositionRepository>();
+builder.Services.AddTransient<ISalaryRepository, SalaryRepository>();
+builder.Services.AddTransient<IWorkerRepository, WorkerRepository>();
+
 
 builder.Services.AddTransient<ICompanyService, CompanyService>();
 builder.Services.AddTransient<IDepartamentService, DepartamentService>();
+builder.Services.AddTransient<IPositionService, PositionService>();
+builder.Services.AddTransient<ISalaryService, SalaryService>();
+builder.Services.AddTransient<IWorkerService, WorkerService>();
+
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

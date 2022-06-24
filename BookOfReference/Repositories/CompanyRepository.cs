@@ -18,7 +18,7 @@ namespace BookOfReference.Repositories
         public async Task<int> CreateAsync(CreateCompanyDTO companyDTO)
         {
 
-            var commandText = "INSERT INTO COMPANIES (Name,Phone,Region,City,Adress)" +
+            var commandText = "INSERT INTO Companies (Name,Phone,Region,City,Adress)" +
                 " VALUES (@Name,@Phone,@Region,@City,@Adress)";
             var Name = new SqlParameter("@Name", companyDTO.Name);
             var Phone = new SqlParameter("@Phone", companyDTO.Phone);
