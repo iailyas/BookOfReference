@@ -12,9 +12,19 @@ namespace BookOfReference.Service
             this.repository = repository;
         }
 
-        public async Task<int> CreateAsync(CreatePositionDTO positionDTO)
+        public async Task<IEnumerable<Position>> AddSalaryToPosition(int id, CreateSalaryDTO salaryDTO)
         {
-            return await repository.CreateAsync(positionDTO);
+            return await repository.AddSalaryToPosition(id, salaryDTO);
+        }
+
+        //public async Task<IEnumerable<Position>> AddWorkerToPosition(int id, AddWorkerToPositionDTO workerDTO)
+        //{
+        //    return await repository.AddWorkerToPosition(id, workerDTO);
+        //}
+
+        public async Task CreateAsync(CreatePositionDTO positionDTO)
+        {
+            await repository.CreateAsync(positionDTO);
         }
 
         public async  Task<IEnumerable<Position>> DeleteAsync(int positionId)

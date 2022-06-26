@@ -35,6 +35,12 @@ namespace BookOfReference.Controllers
 
             await workerService.CreateAsync(workerDTO);
         }
+        [HttpPost("AddPosition")]
+        public async Task AddPositionToWorker(int id, AddPositionToWorkerDTO positionDTO)
+        {
+
+            await workerService.AddPositionToWorker(id,positionDTO);
+        }
 
         [HttpPut("{id}")]
         public async Task<int> PutWorker(int id, CreateWorkerDTO workerDTO)

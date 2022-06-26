@@ -1,38 +1,51 @@
 ﻿using BookOfReference.DTO;
 using BookOfReference.Models;
+using BookOfReference.Repositories.Interfaces;
 
 namespace BookOfReference.Service
 {
     public class WorkerService : IWorkerService
     {
-        public Task<int> CreateAsync(CreateWorkerDTO workerDTO)
+        private readonly IWorkerRepository repository;
+
+        public WorkerService(IWorkerRepository repository)
         {
-            throw new NotImplementedException();
+            this.repository = repository;
         }
 
-        public Task<IEnumerable<Worker>> DeleteAsync(int workerId)
+        public async Task<IEnumerable<Worker>> AddPositionToWorker(int id, AddPositionToWorkerDTO positionDTO)
         {
-            throw new NotImplementedException();
+            return await repository.AddPositionToWorker(id,positionDTO);
         }
 
-        public Task<IEnumerable<Worker>> GetAllWorkersAsync()
+        public async Task CreateAsync(CreateWorkerDTO workerDTO)
         {
-            throw new NotImplementedException();
+            await repository.CreateAsync(workerDTO);
         }
 
-        public Task<IEnumerable<Worker>> GetWorkerByIdAsync(int workerDTO)
+        public async Task<IEnumerable<Worker>> DeleteAsync(int workerId)
         {
-            throw new NotImplementedException();
+            return await repository.DeleteAsync(workerId);
         }
 
-        public Task<Worker> GetWorkerByNameAsync(string workerName)
+        public async Task<IEnumerable<Worker>> GetAllWorkersAsync()
         {
-            throw new NotImplementedException();
+            return await repository.GetAllWorkersAsync();
         }
 
-        public Task<int> UpdateAsync(int id, CreateWorkerDTO workerDTO)
+        public async Task<IEnumerable<Worker>> GetWorkerByIdAsync(int workerDTO)
         {
-            throw new NotImplementedException();
+            return await repository.GetWorkersByIdAsync(workerDTO);
+        }
+
+        public async Task<Worker> GetWorkerByNameAsync(string workerName)
+        {
+            return await repository.GetWorkerByNameAsync(workerName);
+        }
+
+        public async Task<int> UpdateAsync(int id, CreateWorkerDTO workerDTO)
+        {
+            return await repository.UpdateAsync(id, workerDTO);
         }
     }
 }

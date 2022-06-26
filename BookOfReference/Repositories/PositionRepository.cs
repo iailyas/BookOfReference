@@ -3,6 +3,7 @@ using BookOfReference.Models;
 using BookOfReference.Repositories.Interfaces;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace BookOfReference.Repositories
 {
@@ -15,16 +16,59 @@ namespace BookOfReference.Repositories
             this.context = context;
         }
 
-        public async Task<int> CreateAsync(CreatePositionDTO positionDTO)
+        public async Task<IEnumerable<Position>> AddSalaryToPosition(int id, CreateSalaryDTO salaryDTO)
         {
-            var commandText = "INSERT INTO Positions (Name,Index,SalaryId,WorkerId)" +
-                " VALUES (@Name,@Index,@SalaryId,@WorkerId)";
-            var Name = new SqlParameter("@DepartamentName", positionDTO.Name);
-            var Index = new SqlParameter("@DepartamentPhone", positionDTO.Index);
-            var SalaryId = new SqlParameter("@City", positionDTO.SalaryId);
-            var WorkerId = new SqlParameter("@Region", positionDTO.WorkerId);
+            var position = await GetPositionsByIdAsync(id);
+            if (position == null)
+            {
+                return null;
+            }
+            var salary = new Salary
+            {
+                MonthSalary = salaryDTO.MonthSalary,
+                AwardSalary = salaryDTO.AwardSalary,
+                PositionId = salaryDTO.PositionId
+
+            };
+
+
+
+            await context.Salaries.AddAsync(salary);
+            await context.SaveChangesAsync();
+            return await GetPositionsByIdAsync(id);
+        }
+
+        //public async Task<IEnumerable<Position>> AddWorkerToPosition(int id, AddWorkerToPositionDTO workerDTO)
+        //{
+        //    var position = await GetPositionsByIdAsync(id);
+        //    if (position == null)
+        //    {
+        //        return null;
+        //    }
+        //    var worker = new Worker
+        //    {
+        //        FirstName = workerDTO.FirstName,
+        //        LastName = workerDTO.LastName,
+        //        Phone = workerDTO.Phone
+        //    };
+
+
+
+        //    await context.Workers.AddAsync(worker);
+        //    await context.SaveChangesAsync();
+        //    return await GetPositionsByIdAsync(id);
+        //}
+
+        public async Task CreateAsync(CreatePositionDTO positionDTO)
+        {
+            await context.AddAsync(positionDTO);
+            //var commandText = "INSERT INTO Positions (Name,Index,SalaryId,WorkerId)" +
+            //    " VALUES (@Name,@Index,@SalaryId,@WorkerId)";
+            //var Name = new SqlParameter("@DepartamentName", positionDTO.Name);
+            //var Index = new SqlParameter("@DepartamentPhone", positionDTO.Index);
+            
             context.SaveChanges();
-            return await context.Database.ExecuteSqlRawAsync(commandText, Name, Index, SalaryId, WorkerId);
+            //return await context.Database.ExecuteSqlRawAsync(commandText, Name, Index);
         }
 
         public async Task<IEnumerable<Position>> DeleteAsync(int positionId)
@@ -39,6 +83,9 @@ namespace BookOfReference.Repositories
         {
             return await context.Positions
            .FromSqlRaw("SELECT * FROM Positions")
+           .Include(c=>c.Workers)
+           .Include(c=>c.Salaries)  
+           
            .ToListAsync();
         }
 
@@ -46,7 +93,9 @@ namespace BookOfReference.Repositories
         {
             var id = new SqlParameter("@Id", positionId);
             return await context.Positions
-           .FromSqlRaw("SELECT * FROM Positions WHERE Id = @id", id)
+           .Include(c=>c.Salaries)
+           
+           .Include(d=>d.Workers)
            .ToListAsync();
         }
 
@@ -61,10 +110,9 @@ namespace BookOfReference.Repositories
                 "WHERE Id = @id";
             var Name = new SqlParameter("@Name", positionDTO.Name);
             var Index = new SqlParameter("@Index", positionDTO.Index);
-            var SalaryId = new SqlParameter("@SalaryId", positionDTO.SalaryId);
-            var WorkerId = new SqlParameter("@WorkerId", positionDTO.WorkerId);
+            
             context.SaveChanges();
-            return await context.Database.ExecuteSqlRawAsync(commandText, Name, Index, SalaryId, WorkerId);
+            return await context.Database.ExecuteSqlRawAsync(commandText, Name, Index);
         }
     }
 }
