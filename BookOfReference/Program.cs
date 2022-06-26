@@ -1,9 +1,31 @@
+global using BookOfReference.Service.Interfaces;
+using BookOfReference;
+using BookOfReference.Interfaces;
+using BookOfReference.Repositories;
+using BookOfReference.Repositories.Interfaces;
+using BookOfReference.Service;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
+builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]));
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+
+builder.Services.AddTransient<ICompanyRepository, CompanyRepository>();
+builder.Services.AddTransient<IDepartamentRepository,DepartamentRepository>();
+builder.Services.AddTransient<IPositionRepository, PositionRepository>();
+builder.Services.AddTransient<ISalaryRepository, SalaryRepository>();
+builder.Services.AddTransient<IWorkerRepository, WorkerRepository>();
+
+
+builder.Services.AddTransient<ICompanyService, CompanyService>();
+builder.Services.AddTransient<IDepartamentService, DepartamentService>();
+builder.Services.AddTransient<IPositionService, PositionService>();
+builder.Services.AddTransient<ISalaryService, SalaryService>();
+builder.Services.AddTransient<IWorkerService, WorkerService>();
+
+
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -15,6 +37,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
 
 app.UseHttpsRedirection();
 
