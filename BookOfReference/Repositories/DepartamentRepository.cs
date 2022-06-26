@@ -15,20 +15,43 @@ namespace BookOfReference.Repositories
             this.context = context;
         }
 
-        public async Task<int> CreateAsync(CreateDepartamentDTO departamentDTO)
+        public async Task<IEnumerable<Departament>> AddWorkerToDepartament(int id, CreateWorkerDTO workerDTO)
         {
-            var commandText = "INSERT INTO Departaments (DepartamentName,DepartamentPhone,City,Region,Adress,Phone,WorkersCount,CompanyId)" +
-                " VALUES (@DepartamentName,@DepartamentPhone,@City,@Region,@Adress,@Phone,@WorkersCount,@CompanyId)";
-            var DepartamentName = new SqlParameter("@DepartamentName", departamentDTO.DepartamentName);
-            var DepartamentPhone = new SqlParameter("@DepartamentPhone", departamentDTO.DepartamentPhone);
-            var City = new SqlParameter("@City", departamentDTO.City);
-            var Region = new SqlParameter("@Region", departamentDTO.Region);
-            var Adress = new SqlParameter("@Adress", departamentDTO.Adress);
-            var Phone = new SqlParameter("@Phone", departamentDTO.Phone);
-            var WorkersCount = new SqlParameter("@WorkersCount", departamentDTO.WorkersCount);
-            var CompanyId = new SqlParameter("@CompanyId", departamentDTO.CompanyId);
+            var departament = await GetDepartamentsByIdAsync(id);
+            if (departament == null)
+            {
+                return null;
+            }
+            var worker = new Worker
+            {
+                FirstName = workerDTO.FirstName,
+                LastName = workerDTO.LastName,
+                Phone = workerDTO.Phone,
+                DepartamentId = workerDTO.DepartamentId
+            };
+
+
+
+            await context.Workers.AddAsync(worker);
+            await context.SaveChangesAsync();
+            return await GetDepartamentsByIdAsync(id);
+        }
+
+        public async Task CreateAsync(CreateDepartamentDTO departamentDTO)
+        {
+            await context.AddAsync(departamentDTO);
+            //var commandText = "INSERT INTO Departaments (DepartamentName,DepartamentPhone,City,Region,Adress,Phone,WorkersCount,CompanyId)" +
+            //    " VALUES (@DepartamentName,@DepartamentPhone,@City,@Region,@Adress,@Phone,@WorkersCount,@CompanyId)";
+            //var DepartamentName = new SqlParameter("@DepartamentName", departamentDTO.DepartamentName);
+            //var DepartamentPhone = new SqlParameter("@DepartamentPhone", departamentDTO.DepartamentPhone);
+            //var City = new SqlParameter("@City", departamentDTO.City);
+            //var Region = new SqlParameter("@Region", departamentDTO.Region);
+            //var Adress = new SqlParameter("@Adress", departamentDTO.Adress);
+            //var Phone = new SqlParameter("@Phone", departamentDTO.Phone);
+            //var WorkersCount = new SqlParameter("@WorkersCount", departamentDTO.WorkersCount);
+            //var CompanyId = new SqlParameter("@CompanyId", departamentDTO.CompanyId);
             context.SaveChanges();
-            return await context.Database.ExecuteSqlRawAsync(commandText, DepartamentName, DepartamentPhone, City, Region, Adress, Phone, WorkersCount, CompanyId);
+            ////return await context.Database.ExecuteSqlRawAsync(commandText, DepartamentName, DepartamentPhone, City, Region, Adress, Phone, WorkersCount, CompanyId);
         }
 
         public async Task<IEnumerable<Departament>> DeleteAsync(int departamentId)

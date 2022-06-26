@@ -13,9 +13,14 @@ namespace BookOfReference.Service
             this.repository = repository;
         }
 
-        public async Task<int> CreateAsync(CreateSalaryDTO salaryDTO)
+        //public async Task AddPositionToSalary(int id, AddPositionToSalaryDTO positionDTO)
+        //{
+        //    await repository.AddPositionToSalary(id,positionDTO);
+        //}
+
+        public async Task CreateAsync(CreateSalaryDTO salaryDTO)
         {
-            return await repository.CreateAsync(salaryDTO);
+            await repository.CreateAsync(salaryDTO);
         }
 
         public async Task<IEnumerable<Salary>> DeleteAsync(int salaryId)

@@ -27,7 +27,13 @@ namespace BookOfReference.Controllers
 
             return await salaryService.GetSalaryByIdAsync(id);
         }
+        //[HttpPost("AddPositionToSalary")]
+        //public async Task AddPositionToSalary(int id,AddPositionToSalaryDTO salaryDTO)
+        //{
 
+        //    await salaryService.AddPositionToSalary(id,salaryDTO);
+        //}
+        
         [HttpPost]
         public async Task PostSalary(CreateSalaryDTO salaryDTO)
         {

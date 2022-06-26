@@ -34,6 +34,12 @@ namespace BookOfReference.Controllers
 
             await departamentService.CreateAsync(departamentDTO);
         }
+        [HttpPost("AddWorker")]
+        public async Task AddWorkerToDepartament(int id,CreateWorkerDTO workerDTO)
+        {
+
+            await departamentService.AddWorkerToDepartament(id,workerDTO);
+        }
 
         [HttpPut("{id}")]
         public async Task<int> PutDepartament(int id, CreateDepartamentDTO departamentDTO)

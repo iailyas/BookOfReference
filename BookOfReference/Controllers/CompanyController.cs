@@ -1,6 +1,7 @@
 ﻿using BookOfReference.DTO;
 using BookOfReference.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BookOfReference.Controllers
 {
@@ -15,7 +16,6 @@ namespace BookOfReference.Controllers
             this.companyService = companyService;
         }
 
-
         [HttpGet]
         public async Task<IEnumerable<Company>> GetCompanies()
         {
@@ -28,12 +28,22 @@ namespace BookOfReference.Controllers
 
             return await companyService.GetCompanyByIdAsync(id);
         }
-
-        [HttpPost]
-        public async Task PostCompany(CreateCompanyDTO companyDTO)
+        [HttpGet("/Name")]
+        public async Task<IEnumerable<Company>> GetCompanyByName(string name)
         {
 
+            return await companyService.GetCompanyByNameAsync(name);
+        }
+
+        [HttpPost]
+        public async Task AddCompany(CreateCompanyDTO companyDTO)
+        {
             await companyService.CreateAsync(companyDTO);
+        }
+        [HttpPost("/Departament")]
+        public async Task<IEnumerable<Company>> AddDepartamentToCompany(int id, AddDepartamentToCompanyDTO departamentToCompanyDTO)
+        {
+            return await companyService.AddDepartamentToCompany(id, departamentToCompanyDTO);
         }
 
         [HttpPut("{id}")]

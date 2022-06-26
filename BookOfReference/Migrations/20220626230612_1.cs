@@ -4,7 +4,7 @@
 
 namespace BookOfReference.Migrations
 {
-    public partial class relations2 : Migration
+    public partial class _1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,7 +38,7 @@ namespace BookOfReference.Migrations
                     Adress = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     WorkersCount = table.Column<int>(type: "int", nullable: false),
-                    CompanyId = table.Column<int>(type: "int", nullable: false)
+                    CompanyId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -47,19 +47,19 @@ namespace BookOfReference.Migrations
                         name: "FK_Departaments_Companies_CompanyId",
                         column: x => x.CompanyId,
                         principalTable: "Companies",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "Workers",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
                     FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    DepartamentId = table.Column<int>(type: "int", nullable: false)
+                    DepartamentId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -68,8 +68,7 @@ namespace BookOfReference.Migrations
                         name: "FK_Workers_Departaments_DepartamentId",
                         column: x => x.DepartamentId,
                         principalTable: "Departaments",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -80,8 +79,7 @@ namespace BookOfReference.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Index = table.Column<float>(type: "real", nullable: false),
-                    SalaryId = table.Column<int>(type: "int", nullable: false),
-                    WorkerId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    WorkerId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -90,7 +88,8 @@ namespace BookOfReference.Migrations
                         name: "FK_Positions_Workers_WorkerId",
                         column: x => x.WorkerId,
                         principalTable: "Workers",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -101,7 +100,7 @@ namespace BookOfReference.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     MonthSalary = table.Column<float>(type: "real", nullable: false),
                     AwardSalary = table.Column<float>(type: "real", nullable: false),
-                    PositionId = table.Column<int>(type: "int", nullable: false)
+                    PositionId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -110,8 +109,7 @@ namespace BookOfReference.Migrations
                         name: "FK_Salaries_Positions_PositionId",
                         column: x => x.PositionId,
                         principalTable: "Positions",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(

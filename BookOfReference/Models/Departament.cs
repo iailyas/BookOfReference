@@ -2,7 +2,7 @@
 
 namespace BookOfReference.Models
 {
-    public partial class Departament
+    public class Departament
     {
         public int Id { get; set; }
         public string DepartamentName { get; set; }
@@ -12,8 +12,9 @@ namespace BookOfReference.Models
         public string Adress { get; set; }
         public string Phone { get; set; }
         public int WorkersCount { get; set; }
+        public List<Worker>? Workers { get; set; }
         [JsonIgnore]
-        public virtual Company Company { get; set; }
-        public int CompanyId { get; set; }
+        public Company? Company { get; set; }
+        public int? CompanyId { get; set; }
     }
 }

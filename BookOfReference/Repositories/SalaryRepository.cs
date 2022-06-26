@@ -15,15 +15,40 @@ namespace BookOfReference.Repositories
             this.context = context;
         }
 
-        public async Task<int> CreateAsync(CreateSalaryDTO salaryDTO)
+        public async Task<IEnumerable<Salary>> AddPositionToSalary(int id,AddPositionToSalaryDTO positionDTO)
         {
-            var commandText = "INSERT INTO Departaments (MonthSalary,AwardSalary,PositionId)" +
-                " VALUES (@MonthSalary,@AwardSalary,@PositionId)";
-            var MonthSalary = new SqlParameter("@MonthSalary", salaryDTO.MonthSalary);
-            var AwardSalary = new SqlParameter("@AwardSalary", salaryDTO.AwardSalary);
-            var PositionId = new SqlParameter("@PositionId", salaryDTO.PositionId);
+            var salary = await GetSalaryByIdAsync(id);
+            if (salary == null)
+            {
+                return null;
+            }
+            var position = new Position
+            {
+                Name = positionDTO.Name,
+                Index = positionDTO.Index
+               
+
+
+            };
+
+
+
+            await context.Positions.AddAsync(position);
+            await context.SaveChangesAsync();
+            return await GetSalaryByIdAsync(id);
+
+        }
+
+        public async Task CreateAsync(CreateSalaryDTO salaryDTO)
+        {
+            context.AddAsync(salaryDTO);
+            //var commandText = "INSERT INTO Departaments (MonthSalary,AwardSalary,PositionId)" +
+            //    " VALUES (@MonthSalary,@AwardSalary,@PositionId)";
+            //var MonthSalary = new SqlParameter("@MonthSalary", salaryDTO.MonthSalary);
+            //var AwardSalary = new SqlParameter("@AwardSalary", salaryDTO.AwardSalary);
+            //var PositionId = new SqlParameter("@PositionId", salaryDTO.PositionId);
             context.SaveChanges();
-            return await context.Database.ExecuteSqlRawAsync(commandText, MonthSalary, AwardSalary, PositionId);
+            //return await context.Database.ExecuteSqlRawAsync(commandText, MonthSalary, AwardSalary, PositionId);
         }
 
         public async Task<IEnumerable<Salary>> DeleteAsync(int salaryId)
@@ -38,6 +63,7 @@ namespace BookOfReference.Repositories
         {
             return await context.Salaries
           .FromSqlRaw("SELECT * FROM Salaries")
+          
           .ToListAsync();
         }
 

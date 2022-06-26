@@ -11,11 +11,11 @@ namespace BookOfReference
         {
         }
 
-        public virtual DbSet<Company> Companies { get; set; }
-        public virtual DbSet<Departament> Departaments { get; set; }
-        public virtual DbSet<Position> Positions { get; set; }
-        public virtual DbSet<Salary> Salaries { get; set; }
-        public virtual DbSet<Worker> Workers { get; set; }
+        public DbSet<Company> Companies { get; set; }
+        public DbSet<Departament> Departaments { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<Salary> Salaries { get; set; }
+        public DbSet<Worker> Workers { get; set; }
 
 
     }

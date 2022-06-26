@@ -13,9 +13,14 @@ namespace BookOfReference.Service
             this.repository = repository;
         }
 
-        public async Task<int> CreateAsync(CreateDepartamentDTO departamentDTO)
+        public async Task<IEnumerable<Departament>> AddWorkerToDepartament(int id, CreateWorkerDTO workerDTO)
         {
-            return await repository.CreateAsync(departamentDTO);
+            return await repository.AddWorkerToDepartament(id,workerDTO);
+        }
+
+        public async Task CreateAsync(CreateDepartamentDTO departamentDTO)
+        {
+             await repository.CreateAsync(departamentDTO);
         }
 
         public async Task<IEnumerable<Departament>> DeleteAsync(int departamentId)
