@@ -28,12 +28,12 @@ namespace BookOfReference.Controllers
             return await departamentService.GetDepartamentsByIdAsync(id);
         }
 
-        [HttpPost]
-        public async Task PostDepartament(CreateDepartamentDTO departamentDTO)
-        {
+        //[HttpPost]
+        //public async Task PostDepartament(CreateDepartamentDTO departamentDTO)
+        //{
 
-            await departamentService.CreateAsync(departamentDTO);
-        }
+        //    await departamentService.CreateAsync(departamentDTO);
+        //}
         [HttpPost("AddWorker")]
         public async Task AddWorkerToDepartament(int id,CreateWorkerDTO workerDTO)
         {

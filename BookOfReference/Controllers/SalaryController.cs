@@ -34,12 +34,12 @@ namespace BookOfReference.Controllers
         //    await salaryService.AddPositionToSalary(id,salaryDTO);
         //}
         
-        [HttpPost]
-        public async Task PostSalary(CreateSalaryDTO salaryDTO)
-        {
+        //[HttpPost]
+        //public async Task PostSalary(CreateSalaryDTO salaryDTO)
+        //{
 
-            await salaryService.CreateAsync(salaryDTO);
-        }
+        //    await salaryService.CreateAsync(salaryDTO);
+        //}
 
         [HttpPut("{id}")]
         public async Task<int> PutSalary(int id, CreateSalaryDTO salaryDTO)

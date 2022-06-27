@@ -28,12 +28,12 @@ namespace BookOfReference.Controllers
             return await positionService.GetPositionsByIdAsync(id);
         }
 
-        [HttpPost]
-        public async Task PostPosition(CreatePositionDTO positionDTO)
-        {
+        //[HttpPost]
+        //public async Task PostPosition(CreatePositionDTO positionDTO)
+        //{
 
-            await positionService.CreateAsync(positionDTO);
-        }
+        //    await positionService.CreateAsync(positionDTO);
+        //}
         [HttpPost("AddSalaryToPosition")]
         public async Task AddSalaryToPosition(int id, CreateSalaryDTO salaryDTO)
         {
