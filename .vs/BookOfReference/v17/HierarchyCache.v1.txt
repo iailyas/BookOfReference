@@ -1,0 +1,208 @@
+﻿++Solution 'BookOfReference' ‎(1 of 1 project)
+i:{00000000-0000-0000-0000-000000000000}:BookOfReference.sln
+++BookOfReference
+i:{00000000-0000-0000-0000-000000000000}:BookOfReference
+++Connected Services 
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>785
+++Dependencies
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>784
+++Properties
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\properties\
+++Controllers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\controllers\
+++CompanyController.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\controllers\companycontroller.cs
+++DepartamentController.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\controllers\departamentcontroller.cs
+++PositionController.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\controllers\positioncontroller.cs
+++SalaryController.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\controllers\salarycontroller.cs
+++WeatherForecastController.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\controllers\weatherforecastcontroller.cs
+++WorkerController.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\controllers\workercontroller.cs
+++DTO
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\
+++AddDepartamentToCompanyDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\adddepartamenttocompanydto.cs
+++AddWorkerToPositionDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\addworkertopositiondto.cs
+++CreateCompanyDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\createcompanydto.cs
+++CreateDepartamentDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\createdepartamentdto.cs
+++CreatePositionDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\createpositiondto.cs
+++CreateSalaryDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\createsalarydto.cs
+++CreateWorkerDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\createworkerdto.cs
+++Migrations
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\migrations\
+++20220626210909_fix.cs
+++ApplicationDBContextModelSnapshot.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\migrations\applicationdbcontextmodelsnapshot.cs
+++Models
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\models\
+++Company.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\models\company.cs
+++Departament.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\models\departament.cs
+++Position.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\models\position.cs
+++Salary.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\models\salary.cs
+++Worker.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\models\worker.cs
+++Repositories
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\
+++Interfaces
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\interfaces\
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\interfaces\
+++ICompanyRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\interfaces\icompanyrepository.cs
+++IDepartamentRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\interfaces\idepartamentrepository.cs
+++IPositionRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\interfaces\ipositionrepository.cs
+++ISalaryRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\interfaces\isalaryrepository.cs
+++IWorkerRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\interfaces\iworkerrepository.cs
+++CompanyRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\companyrepository.cs
+++DepartamentRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\departamentrepository.cs
+++PositionRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\positionrepository.cs
+++SalaryRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\salaryrepository.cs
+++WorkerRepository.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\repositories\workerrepository.cs
+++Service
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\
+++ICompanyService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\interfaces\icompanyservice.cs
+++IDepartamentService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\interfaces\idepartamentservice.cs
+++IPositionService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\interfaces\ipositionservice.cs
+++ISalaryService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\interfaces\isalaryservice.cs
+++IWorkerService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\interfaces\iworkerservice.cs
+++CompanyService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\companyservice.cs
+++DepartamentService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\departamentservice.cs
+++PositionService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\positionservice.cs
+++SalaryService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\salaryservice.cs
+++WorkerService.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\service\workerservice.cs
+++ApplicationDBContext.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\applicationdbcontext.cs
+++appsettings.json
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\appsettings.json
+++Dockerfile
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dockerfile
+++Program.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\program.cs
+++WeatherForecast.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\weatherforecast.cs
+++No service dependencies discovered
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>786
+++Analyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:analyzers
+++Frameworks
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:frameworks
+++Packages
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:packages
+++launchSettings.json
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\properties\launchsettings.json
+++20220626210909_fix.Designer.cs
+++appsettings.Development.json
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\appsettings.development.json
+++MessagePackAnalyzer
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\users\ilyas\.nuget\packages\messagepackanalyzer\2.1.152\analyzers\dotnet\messagepackanalyzer.dll
+++Microsoft.AspNetCore.Analyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.analyzers.dll
+++Microsoft.AspNetCore.App.Analyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\cs\microsoft.aspnetcore.app.analyzers.dll
+++Microsoft.AspNetCore.App.CodeFixes
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\cs\microsoft.aspnetcore.app.codefixes.dll
+++Microsoft.AspNetCore.Components.Analyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.components.analyzers.dll
+++Microsoft.AspNetCore.Mvc.Analyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.web\analyzers\cs\microsoft.aspnetcore.mvc.analyzers.dll
+++Microsoft.AspNetCore.Razor.SourceGenerator.Tooling.Internal
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\source-generators\microsoft.aspnetcore.razor.sourcegenerator.tooling.internal.dll
+++Microsoft.CodeAnalysis.Analyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\users\ilyas\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.Analyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\users\ilyas\.nuget\packages\microsoft.codeanalysis.analyzers\3.3.2\analyzers\dotnet\cs\microsoft.codeanalysis.csharp.analyzers.dll
+++Microsoft.CodeAnalysis.CSharp.NetAnalyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.csharp.netanalyzers.dll
+++Microsoft.CodeAnalysis.NetAnalyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk\analyzers\microsoft.codeanalysis.netanalyzers.dll
+++Microsoft.EntityFrameworkCore.Analyzers
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\users\ilyas\.nuget\packages\microsoft.entityframeworkcore.analyzers\6.0.6\analyzers\dotnet\cs\microsoft.entityframeworkcore.analyzers.dll
+++Microsoft.Extensions.Logging.Generators
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\packs\microsoft.aspnetcore.app.ref\6.0.3\analyzers\dotnet\roslyn4.0\cs\microsoft.extensions.logging.generators.dll
+++Microsoft.NET.Sdk.Razor.SourceGenerators
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\sdk\6.0.201\sdks\microsoft.net.sdk.razor\source-generators\microsoft.net.sdk.razor.sourcegenerators.dll
+++System.Text.Json.SourceGeneration
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:c:\program files\dotnet\packs\microsoft.netcore.app.ref\6.0.3\analyzers\dotnet\cs\system.text.json.sourcegeneration.dll
+++Microsoft.AspNetCore.App
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\microsoft.aspnetcore.app
+++Microsoft.NETCore.App
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\microsoft.netcore.app
+++Microsoft.AspNet.WebApi.Core (5.2.9)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1036
+++Microsoft.EntityFrameworkCore.Design (6.0.6)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1032
+++Microsoft.EntityFrameworkCore.InMemory (6.0.6)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1038
+++Microsoft.EntityFrameworkCore.SqlServer (6.0.6)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1031
+++Microsoft.EntityFrameworkCore.Tools (6.0.6)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1039
+++Microsoft.VisualStudio.Web.CodeGeneration.Design (6.0.6)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1040
+++Swashbuckle.AspNetCore (6.3.1)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1030
+++Swashbuckle.AspNetCore.Annotations (6.3.1)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1033
+++Swashbuckle.AspNetCore.Swagger (6.3.1)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1034
+++Swashbuckle.AspNetCore.SwaggerGen (6.3.1)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1035
+++Swashbuckle.AspNetCore.SwaggerUI (6.3.1)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1041
+++System.Data.SqlClient (4.8.3)
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:>1037
+++20220626211247_fix.cs
+++20220626211247_fix.Designer.cs
+++20220626211749_fix.cs
+++20220626211749_fix.Designer.cs
+++20220626225955_1.cs
+++20220626225955_1.Designer.cs
+++20220626230612_1.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\migrations\20220626230612_1.cs
+++20220626230612_1.Designer.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\migrations\20220626230612_1.designer.cs
+++AddPositionToWorkerDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\addpositiontoworkerdto.cs
+++AddPositionToSalary.cs
+++AddPositionToSalaryDTO.cs
+i:{e832cf84-661b-4820-9b88-fe9bbae3e22c}:e:\users\ilyas\source\repos\bookofreference\bookofreference\dto\addpositiontosalarydto.cs
+++20220621150758_relations2.cs
+++20220621150758_relations2.Designer.cs
+++20220622234516_relations3.cs
+++20220622234516_relations3.Designer.cs
+++DBContext.cs
+++Swashbuckle.AspNetCore (6.2.3)
+++Microsoft.VisualStudio.Azure.Containers.Tools.Targets (1.14.0)
+++.dockerignore

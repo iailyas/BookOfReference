@@ -40,7 +40,7 @@ namespace BookOfReference.Controllers
         {
             await companyService.CreateAsync(companyDTO);
         }
-        [HttpPost("/Departament")]
+        [HttpPost("/AddDepartamentToCompany")]
         public async Task<IEnumerable<Company>> AddDepartamentToCompany(int id, AddDepartamentToCompanyDTO departamentToCompanyDTO)
         {
             return await companyService.AddDepartamentToCompany(id, departamentToCompanyDTO);

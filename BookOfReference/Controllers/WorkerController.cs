@@ -29,12 +29,12 @@ namespace BookOfReference.Controllers
             return await workerService.GetWorkerByIdAsync(id);
         }
 
-        [HttpPost]
-        public async Task PostWorker(CreateWorkerDTO workerDTO)
-        {
+        //[HttpPost]
+        //public async Task PostWorker(CreateWorkerDTO workerDTO)
+        //{
 
-            await workerService.CreateAsync(workerDTO);
-        }
+        //    await workerService.CreateAsync(workerDTO);
+        //}
         [HttpPost("AddPosition")]
         public async Task AddPositionToWorker(int id, AddPositionToWorkerDTO positionDTO)
         {
