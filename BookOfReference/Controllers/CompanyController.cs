@@ -1,10 +1,12 @@
 ﻿using BookOfReference.DTO;
 using BookOfReference.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 
 namespace BookOfReference.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class CompanyController : Controller
@@ -17,6 +19,7 @@ namespace BookOfReference.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IEnumerable<Company>> GetCompanies()
         {
             return await companyService.GetAllCompaniesAsync();

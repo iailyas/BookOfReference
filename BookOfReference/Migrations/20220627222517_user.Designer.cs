@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BookOfReference.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20220626230612_1")]
-    partial class _1
+    [Migration("20220627222517_user")]
+    partial class user
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -149,6 +149,27 @@ namespace BookOfReference.Migrations
                     b.HasIndex("PositionId");
 
                     b.ToTable("Salaries");
+                });
+
+            modelBuilder.Entity("BookOfReference.Models.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("BookOfReference.Models.Worker", b =>
