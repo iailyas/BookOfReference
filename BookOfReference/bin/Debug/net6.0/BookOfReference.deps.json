@@ -8,12 +8,14 @@
     ".NETCoreApp,Version=v6.0": {
       "BookOfReference/1.0.0": {
         "dependencies": {
+          "Domain": "1.0.0",
           "Microsoft.AspNet.WebApi.Core": "5.2.9",
           "Microsoft.EntityFrameworkCore.Design": "6.0.6",
           "Microsoft.EntityFrameworkCore.InMemory": "6.0.6",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6",
           "Microsoft.EntityFrameworkCore.Tools": "6.0.6",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.6",
+          "Service": "1.0.0",
           "Swashbuckle.AspNetCore": "6.3.1",
           "Swashbuckle.AspNetCore.Annotations": "6.3.1",
           "Swashbuckle.AspNetCore.Swagger": "6.3.1",
@@ -2385,6 +2387,39 @@
           "System.Threading": "4.3.0",
           "System.Xml.ReaderWriter": "4.3.0"
         }
+      },
+      "Domain/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Core": "5.2.9",
+          "Microsoft.EntityFrameworkCore.InMemory": "6.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.6",
+          "Swashbuckle.AspNetCore": "6.3.1",
+          "Swashbuckle.AspNetCore.Annotations": "6.3.1",
+          "Swashbuckle.AspNetCore.Swagger": "6.3.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.3.1",
+          "System.Data.SqlClient": "4.8.3"
+        },
+        "runtime": {
+          "Domain.dll": {}
+        }
+      },
+      "Service/1.0.0": {
+        "dependencies": {
+          "Domain": "1.0.0",
+          "Microsoft.AspNet.WebApi.Core": "5.2.9",
+          "Microsoft.EntityFrameworkCore.InMemory": "6.0.6",
+          "Microsoft.EntityFrameworkCore.SqlServer": "6.0.6",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "6.0.6",
+          "Swashbuckle.AspNetCore": "6.3.1",
+          "Swashbuckle.AspNetCore.Annotations": "6.3.1",
+          "Swashbuckle.AspNetCore.Swagger": "6.3.1",
+          "Swashbuckle.AspNetCore.SwaggerUI": "6.3.1",
+          "System.Data.SqlClient": "4.8.3"
+        },
+        "runtime": {
+          "Service.dll": {}
+        }
       }
     }
   },
@@ -3702,6 +3737,16 @@
       "sha512": "sha512-5zJ0XDxAIg8iy+t4aMnQAu0MqVbqyvfoUVl1yDV61xdo3Vth45oA2FoY4pPkxYAH5f8ixpmTqXeEIya95x0aCQ==",
       "path": "system.xml.xdocument/4.3.0",
       "hashPath": "system.xml.xdocument.4.3.0.nupkg.sha512"
+    },
+    "Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     }
   }
 }
