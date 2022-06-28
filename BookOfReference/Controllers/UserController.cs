@@ -1,13 +1,17 @@
-﻿using BookOfReference.Models;
+﻿
+using Domain.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Service;
 using System.Security.Claims;
+
 
 namespace BookOfReference.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class UserController : Controller
@@ -19,7 +23,7 @@ namespace BookOfReference.Controllers
             this.context = context;
         }
 
-
+        [Authorize]
         [HttpPost("/Login")]
 
         public async Task<LoginModel> Login(LoginModel model)
@@ -36,7 +40,7 @@ namespace BookOfReference.Controllers
 
             return model;
         }
-
+        [Authorize]
         [HttpPost("/Register")]
 
         public async Task<RegistrationModel> Register(RegistrationModel model)
@@ -71,11 +75,12 @@ namespace BookOfReference.Controllers
             // установка аутентификационных куки
             await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(id));
         }
+        [Authorize]
         [HttpGet]
         public async Task Logout()
         {
             await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
-           
+
         }
     }
 }

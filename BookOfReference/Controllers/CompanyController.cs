@@ -1,8 +1,9 @@
-﻿using BookOfReference.DTO;
-using BookOfReference.Models;
+﻿
+using Domain.DTO;
+using Domain.Models;
+using Domain.Service.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace BookOfReference.Controllers
 {

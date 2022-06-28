@@ -1,12 +1,11 @@
-global using BookOfReference.Service.Interfaces;
-using BookOfReference;
-using BookOfReference.Interfaces;
-using BookOfReference.Repositories;
-using BookOfReference.Repositories.Interfaces;
-using BookOfReference.Service;
+
+using Domain.RepositryInterfaces;
+using Domain.Service;
+using Domain.Service.Interfaces;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
-
+using Service;
+using Service.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -14,7 +13,7 @@ builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseSqlSer
 builder.Services.AddControllers();
 
 builder.Services.AddTransient<ICompanyRepository, CompanyRepository>();
-builder.Services.AddTransient<IDepartamentRepository,DepartamentRepository>();
+builder.Services.AddTransient<IDepartamentRepository, DepartamentRepository>();
 builder.Services.AddTransient<IPositionRepository, PositionRepository>();
 builder.Services.AddTransient<ISalaryRepository, SalaryRepository>();
 builder.Services.AddTransient<IWorkerRepository, WorkerRepository>();

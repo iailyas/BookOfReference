@@ -11,6 +11,8 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 COPY ["BookOfReference/BookOfReference.csproj", "BookOfReference/"]
+COPY ["Service/Service.csproj", "Service/"]
+COPY ["Domain/Domain.csproj", "Domain/"]
 RUN dotnet restore "BookOfReference/BookOfReference.csproj"
 COPY . .
 WORKDIR "/src/BookOfReference"

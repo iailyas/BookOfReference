@@ -1,9 +1,14 @@
-﻿using BookOfReference.DTO;
-using BookOfReference.Models;
+﻿
+using Domain.DTO;
+using Domain.Models;
+using Domain.Service.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace BookOfReference.Controllers
 {
+    [Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class PositionController : Controller
@@ -14,13 +19,13 @@ namespace BookOfReference.Controllers
         {
             this.positionService = positionService;
         }
-
+        [Authorize]
         [HttpGet]
         public async Task<IEnumerable<Position>> GetPositions()
         {
             return await positionService.GetAllPositionsAsync();
         }
-
+        [Authorize]
         [HttpGet("{id}")]
         public async Task<IEnumerable<Position>> GetPosition(int id)
         {
@@ -34,6 +39,7 @@ namespace BookOfReference.Controllers
 
         //    await positionService.CreateAsync(positionDTO);
         //}
+        [Authorize]
         [HttpPost("AddSalaryToPosition")]
         public async Task AddSalaryToPosition(int id, CreateSalaryDTO salaryDTO)
         {
@@ -44,13 +50,13 @@ namespace BookOfReference.Controllers
         //{
         //    await positionService.AddWorkerToPosition(id, workerDTO);
         //}
-
+        [Authorize]
         [HttpPut("{id}")]
         public async Task<int> PutPosition(int id, CreatePositionDTO positionDTO)
         {
             return await positionService.UpdateAsync(id, positionDTO);
         }
-
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task DeletePosition(int id)
         {
