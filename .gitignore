@@ -2,3 +2,13 @@
 *.suo
 *.dll
 *.pdb
+Domain/obj/Domain.csproj.nuget.dgspec.json
+Domain/obj/Domain.csproj.nuget.g.props
+Domain/obj/Domain.csproj.nuget.g.targets
+Domain/obj/project.assets.json
+Domain/obj/project.nuget.cache
+Service/obj/project.assets.json
+Service/obj/project.nuget.cache
+Service/obj/Service.csproj.nuget.dgspec.json
+Service/obj/Service.csproj.nuget.g.props
+Service/obj/Service.csproj.nuget.g.targets
