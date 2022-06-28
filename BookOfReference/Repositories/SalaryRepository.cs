@@ -41,13 +41,13 @@ namespace BookOfReference.Repositories
 
         public async Task CreateAsync(CreateSalaryDTO salaryDTO)
         {
-            context.AddAsync(salaryDTO);
+            await context.AddAsync(salaryDTO);
             //var commandText = "INSERT INTO Departaments (MonthSalary,AwardSalary,PositionId)" +
             //    " VALUES (@MonthSalary,@AwardSalary,@PositionId)";
             //var MonthSalary = new SqlParameter("@MonthSalary", salaryDTO.MonthSalary);
             //var AwardSalary = new SqlParameter("@AwardSalary", salaryDTO.AwardSalary);
             //var PositionId = new SqlParameter("@PositionId", salaryDTO.PositionId);
-            context.SaveChanges();
+            await context.SaveChangesAsync();
             //return await context.Database.ExecuteSqlRawAsync(commandText, MonthSalary, AwardSalary, PositionId);
         }
 

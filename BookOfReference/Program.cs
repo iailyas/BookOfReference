@@ -4,6 +4,7 @@ using BookOfReference.Interfaces;
 using BookOfReference.Repositories;
 using BookOfReference.Repositories.Interfaces;
 using BookOfReference.Service;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 
 
@@ -25,6 +26,11 @@ builder.Services.AddTransient<IPositionService, PositionService>();
 builder.Services.AddTransient<ISalaryService, SalaryService>();
 builder.Services.AddTransient<IWorkerService, WorkerService>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(options => //CookieAuthenticationOptions
+                {
+                    options.LoginPath = new Microsoft.AspNetCore.Http.PathString("/Account/Login");
+                });
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -36,6 +42,8 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+    app.UseAuthentication();
+    app.UseAuthorization();
 }
 
 

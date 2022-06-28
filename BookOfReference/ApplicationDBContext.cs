@@ -11,6 +11,7 @@ namespace BookOfReference
         {
         }
 
+        public DbSet<User> User { get; set; }
         public DbSet<Company> Companies { get; set; }
         public DbSet<Departament> Departaments { get; set; }
         public DbSet<Position> Positions { get; set; }
